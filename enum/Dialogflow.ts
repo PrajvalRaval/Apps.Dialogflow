@@ -7,14 +7,21 @@ export interface IDialogflowMessage {
 }
 
 export interface IDialogflowQuickReplies {
-    text: string;
+    text?: string;
     options: Array<IDialogflowQuickReplyOptions>;
+    customFields?: IDialogflowCustomFields; 
+}
+
+export interface IDialogflowCustomFields {
+    disableInput?: boolean;
+    disableInputMessage?: string;
 }
 
 export interface IDialogflowQuickReplyOptions {
     text: string;
     actionId?: string;
     buttonStyle?: ButtonStyle;
+    salesforceButtonId?: string;
 }
 
 export interface IDialogflowAccessToken {
@@ -56,4 +63,8 @@ export enum LanguageCode {
 export enum DialogflowRequestType {
     MESSAGE = 'message',
     EVENT = 'event',
+}
+
+export enum Message {
+    CLOSED_BY_VISITOR = 'Closed by visitor',
 }

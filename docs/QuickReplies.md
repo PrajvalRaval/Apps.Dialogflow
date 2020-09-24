@@ -16,7 +16,7 @@
 
 | **Param Name** | **Param Type** |                **Description**                | **Dependency** |                                                                         **Example**                                                                         |
 |:--------------:|:--------------:|:---------------------------------------------:|:--------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|     `text`     |     String     | The title of the collection of quick replies. |    Required    |                                 ``` "text": "Sorry I don't know the answer. Please select one of the following options:" ```                                |
+|     `text`     |     String     | The title of the collection of quick replies. |    Optional    |                                 ``` "text": "Sorry I don't know the answer. Please select one of the following options:" ```                                |
 |    `options`   |      Array     |    The collection of quick replies objects.   |    Required    | ``` "options": [       {         "text": "Start chat with agent",         "actionId": "sflaia-start-chat",         "buttonStyle" : "primary"       }  ] ``` |
 
 ## `options` Params
@@ -37,11 +37,12 @@ These buttons perform a specific action in the app. You can add them by simply p
 
 - Parameters:
 
-|   Param Name  |  Dependency  | Param Type |    Acceptable Value   |
-|:-------------:|:------------:|:----------:|:---------------------:|
-|   `actionId`  | **Required** |   String   | `df_perform_handover` |
-|     `text`    | **Required** |   String   |        **Any**        |
-| `buttonStyle` | **Optional** |   String   | `primary` or `danger` |
+|      Param Name      |  Dependency  | Param Type |      Acceptable Value      |
+|:--------------------:|:------------:|:----------:|:--------------------------:|
+|      `actionId`      | **Required** |   String   |    `df_perform_handover`   |
+|        `text`        | **Required** |   String   |           **Any**          |
+| `salesforceButtonId` | **Optional** |   String   | **Any Liveagent ButtonId** |
+|     `buttonStyle`    | **Optional** |   String   |    `primary` or `danger`   |
 
 - Example Structure:
 
